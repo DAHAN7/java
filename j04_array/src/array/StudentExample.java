@@ -38,6 +38,13 @@ public class StudentExample {
 	 	                 
 	 	        5. while문을 종료하여 프로그램 종료 
 			 */
+			//
+			if(selectNo != 1 && selectNo != 5 && scores == null) {
+				System.out.println("학생 수를 먼저 입력해주세요.");
+				continue;
+			}
+			
+			
 			// switch문을 통해서 사용자가 입력한 메뉴 번호 비교
 			switch(selectNo) {
 				case 1 : 
@@ -81,11 +88,10 @@ public class StudentExample {
 						total += i;
 						if(i > max) {
 							max = i;
-						
 						}
-						if(i<min) {
+						
+						if(i < min) {
 							min = i;
-							
 						}
 					}
 					
@@ -95,19 +101,21 @@ public class StudentExample {
 					System.out.println("평균 : " + avg);
 					System.out.println("최고 : " + max);
 					System.out.println("최저 : " + min);
-					
 					break;
-				case 5 : 
+				case 5 :
 					isRun = false;
-					System.out.println("프로그램을 종료합니다.");
+					System.out.println("프로그램 을 종료합니다.");
 					break;
-					default:
-						System.out.println("없는 메뉴입니다.");
-			}//end switch
-			
-			
+				default : 
+					System.out.println("없는 메뉴입니다.");
+			} //end switch
 		} // end while
-		
 		System.out.println("Main END");
 	} // end main
 } // end class
+
+
+
+
+
+

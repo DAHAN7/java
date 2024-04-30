@@ -112,12 +112,14 @@ public class ArrayRefExample {
 		 arrays[1]     [0][0][0]	int[]
 		 arrays[2]     [0][0][0]	int[]
 		 */
+		
 		int[][] arrays2 = new int[2][3];
 		// arrays2
 		//    0     1 
 		// [null][null]
 		// arrays2[0] = new int[3];
 		// arrays2[1] = new int[3];
+		
 		for(int i = 0; i < arrays2.length; i++) {
 			System.out.println(arrays2[i]);
 			for(int j = 0; j < 3; j++) {
@@ -127,23 +129,14 @@ public class ArrayRefExample {
 			System.out.println(arrays[i][1]);
 			System.out.println(arrays[i][2]);
 			*/
-		}//이차원 배열의 각 항목 순회
-		//이차원 배열의 선언과 동시에 초기화
+		} // 이차원 배열의 각 항목 순회
+		
 		// 이차원 배열의 선언과 동시에 초기화
 		int[][] scoresArray = new int[][]{ //scoresArray.length : 2
 			{10, 20, 30},				   //scoresArray[0].length : 3
 			{70, 80, 90, 100}			   //scoresArray[1].length : 4	
 		};
 		
-		for(int i = 0; i < scoresArray.length; i++) {
-			System.out.print(scoresArray[i]+" ");
-			for(int j = 0; j < scoresArray[i].length;j++) {
-				System.out.print(scoresArray[i][j]+" ");
-			}
-			// 출력 후 다음 항목으로 이동 전에 줄바꿈
-			System.out.println();
-		}end 외부 for
-		//향상된 for문 or for each문
 		for(int i = 0; i < scoresArray.length; i++) {
 			System.out.print(scoresArray[i]+" ");
 			for(int j = 0; j < scoresArray[i].length;j++) {
@@ -165,3 +158,16 @@ public class ArrayRefExample {
 	} // end main
 
 } // end class
+
+
+
+
+
+
+
+
+
+
+
+
+
