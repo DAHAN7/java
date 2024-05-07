@@ -13,15 +13,15 @@ public class Practice03 {
 		int min = numbers[0];
 		
 		for (int i=0;i<numbers.length;i++) {
-			if (numbers[i]>max) {
-				max=numbers[i];
+			if(numbers[i]>max) {
+				max = numbers[i];
 			}
 			if(numbers[i]<min) {
-				min=numbers[i];
+				min = numbers[i];
 			}
 		}
-		System.out.print("가장 작은 큰수:"+max);
-		System.out.print("가장 작은 수:"+min);
+		System.out.print("가장 큰수는:"+max);
+		System.out.print("가장 작은수는:"+min);
 	} // end main
 
 } // end class
