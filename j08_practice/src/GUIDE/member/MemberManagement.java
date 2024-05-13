@@ -36,31 +36,127 @@ public class MemberManagement{
 	
 	// 프로그램 실행
 	void isRun() {
-		
-	}
+		while(isRun) {
+			System.out.println("===========================================================");
+			System.out.println("1.회원가입|2.로그인|3.회원목록|4.회원정보수정|5.회원탈퇴|6.프로그램 종료");
+			System.out.println("===========================================================");
+			System.out.println("메뉴 선택 > ");
+			
+			if(!sc.hasNextInt()) {
+				System.out.println("번호를 입력해주세요>");
+				sc.next();
+				continue;
+			}
+			
+			selectNo = sc.nextInt();
+			
+			switch(selectNo) {
+				case 1 : 
+					System.out.println(" 회원가입 > ");
+					join();
+					break;
+				case 2 : 
+					System.out.println("== 로그인 == ");
+					login();
+					break;
+				case 3 : 
+					System.out.println("== 회원목록 == ");
+					select();
+					break;
+				case 4 : 
+					System.out.println("== 회원정보수정 == ");
+					update();
+					break;
+				case 5 : 
+					System.out.println("== 회원탈퇴 == ");
+					delete();
+					break;
+				case 6 : 
+					System.out.println("== 종료 == ");
+					terminate();
+					break;
+				default :
+					System.out.println("선택할 수 없는 번호입니다.");
+			} // switch 종료
+		} // while 종료
+	} // run 종료
 	
 	// 프로그램 종료
 	void terminate() {
-		
+		isRun = false;
+		System.out.println("프로그램 종료");
 	}
 
 	// 회원 가입
 	void join() {
+		System.out.println("사용정보를 입력해주세요----------------------");
 		
+		System.out.println("아이디를 입력해주세요>");
+		String mId= sc.next();
+		System.out.println("비밀번호를 입력 해 주세요");
+		String mPw = sc.next();
+		System.out.println("비밀번호를 확인해주세요");
+		String mPw1= sc.next();
+		System.out.println("이름을 입력해 주세요");
+		String mName= sc.next();
+		if(!memberIdCheck(mId)) {
+			System.out.println("이미 존재하는 아이디입니다.");
+			return;
+		}
+		Member newMember = new Member(members.length,mId,mPw1,mName);
+		for(int i=0;i<members.length;i++) {
+			if(members[i]==null) {
+				members[i]= newMember;
+				System.out.println("회원가입완료");
+				return;
+			}
+		}
+		System.out.println("회원가입 실패");
 	}
 	
 	// 로그인
 	void login() {
-		
+		System.out.println("아이디를 입력해주세요>");
+		String mId= sc.next();
+		System.out.println("비밀번호를 입력 해 주세요");
+		String mPw = sc.next();
+		if(mId.equals(master.mId)
+				&& mPw.equals(master.mPw)) {
+			loginMember = master;
+			System.out.println("관리자 계정입니다.");
+		}
+		Member findMember = new Member(0,mId,mPw,null);
+		Member member = findMember(findMember);
+		if(member != null) {
+			System.out.println("정상적으로 로그인 되었습니다.");
+		}else {
+			System.out.println("일치하는 멤버가 없습니다.");
+		}
 	}
 
 	// 회원목록 - 로그인한 회원이 관리자 일때만 노출 
 	void select() {
-		
+		if(loginMember != null && loginMember.equals(master)) {
+			System.out.println("회원목록>");
+			for(Member m: members) {
+				if(m !=null) {
+					System.out.print(m);
+				}
+			}
+}else {
+	System.out.println("관리자만 확인가능한 메뉴입니다.");
+}
 	}
 	
 	// 회원정보 수정 - 로그인한 회원 정보랑 일치 하거나 관리자 일때만 수정(이름정보만 수정)
 	void update() {
+		if(loginMember != null) {
+			if(loginMember.equals(master)
+					||
+					loginMember.equals(findMember(loginMember))) {
+				
+			}
+		}
 		
 	}
 	

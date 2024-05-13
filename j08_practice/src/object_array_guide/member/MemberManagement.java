@@ -47,7 +47,9 @@ public class MemberManagement{
 				sc.next();
 				continue;
 			}
+			
 			selectNo = sc.nextInt();
+			
 			switch(selectNo) {
 				case 1 : 
 					System.out.println("== 회원가입 == ");
