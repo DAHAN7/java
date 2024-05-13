@@ -154,15 +154,23 @@ public class MemberManagement{
 			if(loginMember.equals(master)
 					||
 					loginMember.equals(findMember(loginMember))) {
-				
+				System.out.print("수정할 이름을 입력해주세요>");
+				String modifyName = sc.next();
+				loginMember.mName = modifyName;
+			System.out.println("수정완료");
+			}else {
+				System.out.println("수정권한이 없음");
 			}
 		}
-		
 	}
 	
 	// 회원탈퇴 - 삭제 할려는 정보가 본인 정보일때만 삭제
 	void delete() {
-		
+		if(loginMember !=null) {
+			deleteMember();
+		}else {
+			System.out.println("회원탈퇴완료");
+		}
 	}
 	
 	// 사용자 아이디 중복 체크
