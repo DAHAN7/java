@@ -60,62 +60,23 @@ public class BookManagement {
 	// 도서 등록
 	public void  registerBook() {
 		System.out.println("1. 도서등록");
-		String title = getData("도서 제목:");
-		String author = getData("저자:");
-		
-		Book a =new Book(count,title,author);
-		for(int i=0;i<books.length;i++) {
-			if(books[i]==null) {
-				books[i]= a;
-				System.out.println("등록완료:");
-				count++;
-				return;
-			}
-		}
-		System.out.println("등록실패:");
 	}
 	
 	// 도서 목록 출력
 	public void selectBook() {
 		System.out.println("2. 도서목록");
-		for(int i=0;i<books.length;i++) {
-			if(books[i]!=null) {
-				printBookInfo(books[i]);
-			}
-		}
 	}
 
 	// 도서 정보 수정
 	public void updateBook() {
 		System.out.println("3. 도서수정");
-		int num = getSelectNum("수정할 도서 관리 번호를 입력하세요:");
-		Book foundBook= findBook(num);
-		if(foundBook!=null) {
-			String title =getData("제목수정:");
-			String author = getData("저자수정:");
-			System.out.println("도서정보가 수정:");
-		}else {
-			System.out.println("해당도서를 찾을수가 없음");
-		}
-				}
+	}
 	
 	// 도서 목록에서 책 정보 삭제
 	public void deleteBook() {
-	    System.out.println("4. 도서삭제");
-	    int num = getSelectNum("삭제할 도서 관리 번호를 입력하세요: ");
-	    Book foundBook = findBook(num);
-	    if (foundBook != null) {
-	        for (int i = 0; i < books.length; i++) {
-	            if (books[i] != null && books[i].num == num) {
-	                books[i] = null;
-	                System.out.println("도서가 삭제되었습니다.");
-	                return;
-	            }
-	        }
-	    } else {
-	        System.out.println("해당 도서를 찾을 수 없습니다.");
-	    }
+		System.out.println("4. 도서삭제");
 	}
+	
 	// 책 정보 출력
 	public void printBookInfo(Book b) {
 		System.out.println(b.toString());
@@ -123,11 +84,6 @@ public class BookManagement {
 	
 	// 도서관리번호로 책 정보 찾기
 	public Book findBook(int num) {
-for(int i=0;i<books.length;i++) {
-	if(books[i]!=null) {
-		return books[i];
-	}
-}
 		return null;
 	}
 	

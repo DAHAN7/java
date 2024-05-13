@@ -21,6 +21,5 @@ public class Book {
 	public String toString() {
 		return "Book{ [num : "+this.num+"] [title : " +this.title +"] [author : " + this.author + "]}";
 	}
-	}
 
-
+}

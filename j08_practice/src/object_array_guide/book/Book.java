@@ -9,7 +9,6 @@ public class Book {
 	// 도서 저자
 	String author;
 	
-	
 	public Book() {}
 
 	public Book(int num, String title, String author) {
