@@ -36,7 +36,7 @@ public class Member {
 	}
 
 	public String toString() {
-		return "Member{ [mNum : "+this.mNum+"] [mName : " +this.mName +"] [ mId : " + this.mId+"]}";
+		return "Member{ [mNum : "+this.mNum+"] [mName : " +this.mName +"] [ mId : " + this.mId+"]}" + this.mPw;
 	}
 
 }
