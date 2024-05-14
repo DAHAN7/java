@@ -84,7 +84,6 @@ public class MemberManagement{
 	// 프로그램 종료
 	void terminate() {
 		isRun = false;
-		
 	}
 
 	// 회원 가입
@@ -228,15 +227,15 @@ public class MemberManagement{
 		
 		// 탈퇴 처리할 수 있는 개인회원으로 로그인된 사용자
 		System.out.println("정말로 삭제 하시겠습니까? y / n");
-		String yn =sc.next();
+		String yn = sc.next();
 		switch(yn) {
-		case"y":case"Y":case"ㅛ":
-			//회원탈퇴 요청 처리
-			deleteMember();
-			//로그인된 회원과 mId,mPw를 비교하여 일치하는 항목의
-			//회원정보를 null로 변경하여 제거
-			break;
-			default:System.out.println("회원탈퇴가 취소되었습니다.");
+			case "y" : case "Y" : case "ㅛ" :
+				// 회원 탈퇴 요청 처리
+				deleteMember();
+				// 로그인된 회원과 mId,mPw를 비교하여 일치하는 항목의
+				// 회원 정보를 null로 변경하여 제거
+				break;
+			default : System.out.println("회원탈퇴가 취소되었습니다.");
 		}
 		
 	} // end delete method
