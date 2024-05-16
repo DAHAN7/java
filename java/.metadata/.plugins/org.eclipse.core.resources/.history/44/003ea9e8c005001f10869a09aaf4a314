@@ -1,0 +1,13 @@
+
+public class Practice02AreaExample {
+
+	/*
+	 *  사용자에게 반지름(radius)을 실수로 입력받아
+	 *  원면적으로 계산하여 출력
+	 *  원의면적 : 반지름 * 반지름 * 원주율(3.14)
+	 */
+	public static void main(String[] args) {
+		
+	}
+	
+}

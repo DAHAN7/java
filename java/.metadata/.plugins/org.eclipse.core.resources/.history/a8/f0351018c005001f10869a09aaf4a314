@@ -1,0 +1,12 @@
+
+public class Practice01StringPrintExample {
+	//프로그램 실행 시에 호출
+	//호출된 기능이 완료되면 프로그램도 종료
+	public static void main(String[]args) {
+		System.out.println("Main 시작");
+		
+		String str = "Hello Java";
+		System.out.println("Main 종료");
+	}
+	
+}

@@ -1,0 +1,18 @@
+package control_statement;
+import java.util.Scanner;
+public class ScannerExample {
+
+	public static void main(String[] args) {
+		
+		// java.util.Scanner sc = new java.util.Scanner(System.in);
+		// Scanner 를 사용하기 위한 명시
+		Scanner sc = new Scanner(System.in);
+		// import 자동 추가 ctrl + shift + o(알파벳 오)
+		System.out.println("정수값을 입력해 주세요 > ");
+		// 콘솔을 통해서 사용자가 입력한 정수값을 반환
+		// 사용자가 값을 입력하고 enter로 종료를 알리기 전까지 blocking
+		int a = sc.nextInt(); 
+		System.out.printf("입력한 정수값은 %d 입니다. %n", a);
+
+    }
+}

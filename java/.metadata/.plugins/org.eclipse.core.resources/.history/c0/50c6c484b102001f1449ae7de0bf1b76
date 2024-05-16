@@ -1,0 +1,24 @@
+package operators;
+
+/**
+ * 20240425-03
+ * 비교연산자 실습
+ */
+public class operators01EqualsTest {
+	
+	public static void main(String[] args) {
+	/*
+	 	크기 비교 연산자
+	 	> , >= < , < , <=
+	 	동등 비교 연산자
+	 	==,  !=
+		 	
+	 	논리 비교 연산자
+	 	&&, || , ^,  &, | 
+	 */
+		int num1 = 10, num2 = 20;
+		
+		boolean result = num1 > num2;
+		System.out.println("num1 > num2 : " + result);
+	}
+}

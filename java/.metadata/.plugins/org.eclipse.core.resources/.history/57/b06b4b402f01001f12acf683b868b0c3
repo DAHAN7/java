@@ -1,0 +1,10 @@
+package variable;
+
+public class VariableTest {
+
+	public static void main(String[] args) {
+		// TODO 변수 사용법 확인
+
+	}
+
+}

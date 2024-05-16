@@ -1,0 +1,80 @@
+package operators;
+
+/**
+ * 20240425-03
+ * 비교연산자 실습
+ */
+public class operators01EqualsTest {
+	
+	public static void main(String[] args) {
+		/*
+		 	크기 비교 연산자
+		 	> , >= < , < , <=
+		 	동등 비교 연산자
+		 	==,  !=
+			 	
+		 	논리 비교 연산자
+		 	&&, || , ^,  &, | 
+		 */
+		int num1 = 10, num2 = 20;
+			
+		boolean result = num1 > num2;
+		
+		/*
+		 	>= , < , <= 연산 결과를 저장하여 출력
+		 	TODO num1과 num2 의 수치를 비교 하여 결과를 result 변수에 저장하여 출력
+		 */
+		boolean result1 = num1 >= num2;
+		boolean result2 = num1 < num2;
+		boolean result3 = num1 <= num2;
+		
+		System.out.println("num1 >= num2 : " + result1);
+		System.out.println("num1 < num2 : " + result2);
+		System.out.println("num1 <= num2 : " + result3);
+		System.out.println("num1 > num2 : " + result);
+		
+		// num1에 저장된 값과 num2에 저장된 값의 데이터 타입과 값이 일치하면 true 아니면 false
+		result = num1 == num2;
+		// num1에 저장된 값과 num2에 저장된 값의 데이터 타입과 값이 일치하면 true 아니면 false
+		result = num1 == num2; // 10 == 20,   false
+		System.out.println(result);
+		
+		// num1에 저장된 값과 num2에 저장된 값의 데이터 타입과 값이 일치하지 않으면 true 아니면 false
+		result = num1 != num2; // 10 != 20,    true
+		System.out.println(result);
+		
+		
+		String str = "최기근";
+		// 문자열의 수치를 비교할 수 없으므로 문법 오류(컴파일 오류)
+		// result = num1 > str;
+		String str2 = "최기근";
+		result = str == str2;
+		System.out.println("str == str2 : " + result);
+		
+		// 문자열 수치 비교는 불가
+		// result = str >= str2;
+		
+		/////////////////////////////////////
+		// 논리 비교 연산자
+		num1 = 10;
+		num2 = 22;
+		
+		// 논리연산식 && 논리연산식
+		// 논리곱 : 둘다 참일 때 true, 둘중에 하나라도 거짓이면 false
+		//                       false  &&    true
+		boolean boolResult = (num1 < 0) && (num2 > 0);
+		System.out.println("num1 : " + num1);
+		System.out.println("num2 : " + num2);
+		System.out.println("boolresult : " + boolResult);
+		
+		System.out.println("----------------------------------------------");
+		
+		boolResult = (num1 > 0) || (num2++  > 0);
+		System.out.println("num1 : " + num1);
+		System.out.println("num2 : " + num2);
+		System.out.println("boolresult : " + boolResult);
+
+		
+	}
+	}
+

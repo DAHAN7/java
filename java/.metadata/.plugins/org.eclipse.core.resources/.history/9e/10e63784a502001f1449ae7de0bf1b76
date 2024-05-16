@@ -1,0 +1,29 @@
+package operators;
+//class block 외부에 작성 할 수 있는 code는 다른 class정의
+		/*
+		 *package 명시
+		 *import 명시
+		 *만 가능하다
+		 */
+/**
+ * 문서주석
+ * @author choi
+ * since 2024-04-25
+ * apiNote 현재 문서에서는 연산자 중에 <b>산술연산자</b>를 학습합니다
+ */
+public class operators00ArithmeticTest {
+	public static void main(String[]args) {
+		System.out.println("---Main 프로그램 실행");
+		int num1 = +10;
+		int num2 = +20;//+부호는 생략해도 양의 정수를 표현
+
+		System.out.println(num1);
+		System.out.println(num2);
+		
+		int num3 = -40;
+		System.out.println(num3);
+
+		
+		System.out.println("---Main 프로그램 실행");
+	}
+}
