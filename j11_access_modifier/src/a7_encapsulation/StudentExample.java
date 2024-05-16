@@ -9,7 +9,12 @@ public class StudentExample {
 		Student choi = new Student();
 		choi.name = "최기근";
 		
-		choi.age  = -20;
+		// private field 이므로
+		// 외부에서 직접적인 접근 불가
+		// choi.age  = -20;
+		
+		choi.setAge(-20);
+		System.out.println(choi.getAge());
 	}
 
 }
