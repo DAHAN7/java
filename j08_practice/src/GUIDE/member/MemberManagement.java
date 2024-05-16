@@ -162,45 +162,56 @@ public class MemberManagement{
    }
    
 // 회원정보 수정 - 로그인한 회원 정보랑 일치 하거나 관리자 일때만 수정(이름정보만 수정)
-void update() {
-    if (loginMember != null) {
-        if (loginMember.equals(master) || loginMember.equals(findMember(loginMember))) {
-            System.out.println("수정할 회원의 이름을 입력해주세요>");
-            String memberNameToUpdate = sc.next();
+   void update() {
+	    if (loginMember != null) {
+	        if (loginMember.equals(master) || loginMember.equals(findMember(loginMember))) {
+	            System.out.println("번호입력>");
+	            int menuNo = sc.nextInt();
+	            if (menuNo == 1) {
+	                System.out.println("회원정보수정>");
+	            } else if (menuNo == 2) {
+	                if (loginMember.equals(master)) {
+	                    System.out.println("관리자 로그인 회원정보수정");
+	                    System.out.println("수정할 회원 번호를 입력해 주세요>");
+	                    int memberNumber = sc.nextInt();
+	                    Member memberToUpdate = members[memberNumber];
 
-            // 관리자 자신의 아이디가 아니고, 로그인한 회원이 관리자일 경우에만 수정 가능
-            if (!memberNameToUpdate.equals(master.mName) && loginMember.equals(master)) {
-                Member memberToUpdate = findMember(new Member(memberNameToUpdate));
+	                    if (memberToUpdate == null) {
+	                        System.out.println("해당 회원이 존재하지 않습니다.");
+	                        return;
+	                    }
 
-                if (memberToUpdate == null) {
-                    System.out.println("해당 회원이 존재하지 않습니다.");
-                    return;
-                }
+	                    System.out.println("수정할 회원의 이름을 입력해 주세요>");
+	                    String modifyName = sc.next();
+	                    memberToUpdate.mName = modifyName;
 
-                System.out.println("수정할 이름을 입력해주세요>");
-                String modifyName = sc.next();
-                memberToUpdate.mName = modifyName;
+	                    System.out.println("수정완료");
+	                } else {
+	                    System.out.println("내정보수정>");
 
-                // 비밀번호 수정 여부 확인
-                System.out.println("비밀번호를 한번 더 입력해주세요>");
-                    String newPw = sc.next();
-                    System.out.println("새로운 비밀번호를 다시 입력해주세요>");
-                    String newPwConfirm = sc.next();
-                    if (!newPw.equals(newPwConfirm)) {
-                        System.out.println("비밀번호 확인이 일치하지 않습니다.");
-                        return;
-                    }
-                    memberToUpdate.mPw = newPw;
-                }
+	                    // 비밀번호 확인
+	                    System.out.println("비밀번호를 한번 더 입력해주세요>");
+	                    String confirmPassword = sc.next();
+	                    if (!confirmPassword.equals(loginMember.mPw)) {
+	                        System.out.println("비밀번호가 일치하지 않습니다.");
+	                        return;
+	                    }
 
-                System.out.println("회원 정보 수정완료");
-            } else {
-                System.out.println("수정권한이 없습니다.");
-            }
-        } else {
-            System.out.println("수정권한이 없습니다.");
-        }
-    }
+	                    System.out.println("수정할 이름을 입력해주세요>");
+	                    String modifyName = sc.next();
+	                    loginMember.mName = modifyName;
+
+	                    System.out.println("내정보수정완료");
+	                }
+	            } else {
+	                System.out.println("잘못된 번호입니다.");
+	            }
+	        } else {
+	            System.out.println("수정권한이 없습니다.");
+	        }
+	    }
+	}
+
    // 회원탈퇴 - 삭제 할려는 정보가 본인 정보일때만 삭제
    void delete() {
       if(loginMember !=null) {
