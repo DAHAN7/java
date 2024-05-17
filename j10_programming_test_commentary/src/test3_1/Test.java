@@ -8,9 +8,26 @@ public class Test {
 		if (score > 90) {
 			grade = 'A';
 		} else {
-			grade = 'B';
+			if(score > 80) {
+				grade = 'B';
+			}else {
+				grade = 'C';
+			}
 		}
+		
+		System.out.println(grade);
+		
+		 grade = (score > 90) ? 'A' : 'B';
+		//grade = (score > 90) ? 'A' : (score > 80) ? 'B' : 'C';
+		
 		System.out.println(grade);
 	}
 
 }
+
+
+
+
+
+
+

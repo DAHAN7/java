@@ -1,5 +1,9 @@
 package test2_1;
 
+/**
+ * 실행 class 실행 단축키 ctrl + F11
+ * F11 만 실행하면 디버깅 모드
+ */
 public class Test {
 
 	public static void main(String[] args) {
@@ -13,6 +17,7 @@ public class Test {
 		System.out.println(choi.school);
 		System.out.println(choi.grade);
 		System.out.println(choi.name);
+		
 	}
 
 }
