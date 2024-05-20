@@ -88,6 +88,13 @@ public class MemberManagement{
 		System.out.println("이름을 입력해주세요");
 		String mName = sc.next();
 		
+		if(memberIdCheck(mId)&&!mPw.equals(rePw)) {
+			System.err.println("이미사용중이거나 비밀번호가 일치하지 않습니다.");
+			
+		}
+		else {System.out.println("정상적으로 로그인되었습니다.");
+			
+		}
 	}
 
 	private void login() {
@@ -95,7 +102,10 @@ public class MemberManagement{
 		String mId = sc.next();
 		System.out.println("비밀번호를 입력해주세요 >");
 		String mPw = sc.next();
-
+		if(!memberIdCheck(mId)
+				&&!mPw.equals(mrePw)) {System.out.println("이미사용중이거나 "))
+			
+		}
 	}
 
 	// 회원 목록은 관리자만 출력
