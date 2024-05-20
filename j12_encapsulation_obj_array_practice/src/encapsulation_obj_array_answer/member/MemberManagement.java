@@ -1,4 +1,4 @@
-package encapsulation_obj_array.member;
+package encapsulation_obj_array_answer.member;
 
 import java.util.Scanner;
 
@@ -26,7 +26,9 @@ public class MemberManagement{
 	}
 
 	public void isRun() {
+		
 		System.out.println("프로그램 시작!");
+		
 		while (isRun) {
 			System.out.println("===========================================================");
 			System.out.println("1.회원가입 |2.로그인 |3.회원목록|4.회원정보수정|5.회원탈퇴|6.프로그램종료");
@@ -68,9 +70,9 @@ public class MemberManagement{
 					break;
 				default:
 					System.out.println("선택할 수 없는 번호입니다.");
-			}
-		}
-	}
+			} // end switch
+		} // end while
+	} // end isRun method
 
 	
 	private void terminate() {
