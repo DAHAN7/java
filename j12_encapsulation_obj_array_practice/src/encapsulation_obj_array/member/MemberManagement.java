@@ -100,6 +100,7 @@ public class MemberManagement {
 		System.out.println("이름을 입력해주세요");
 		String mName = sc.next();
 		
+<<<<<<< HEAD
 		int mNum = generateMemberNum();
 
 		Member newMember = new Member(mNum, mName, mId, mPw);
@@ -113,6 +114,15 @@ public class MemberManagement {
 		}
 		
 		System.out.println("더 이상 회원을 추가할 수 없습니다.");
+=======
+		if(memberIdCheck(mId)&&!mPw.equals(rePw)) {
+			System.err.println("이미사용중이거나 비밀번호가 일치하지 않습니다.");
+			
+		}
+		else {System.out.println("정상적으로 로그인되었습니다.");
+			
+		}
+>>>>>>> bc0d025 (Your commit message)
 	}
 
 	private void login() {
@@ -120,6 +130,7 @@ public class MemberManagement {
 		String mId = sc.next();
 		System.out.println("비밀번호를 입력해주세요 > ");
 		String mPw = sc.next();
+<<<<<<< HEAD
 
 		Member foundMember = findMember(new Member(mId, mPw));
 
@@ -128,6 +139,11 @@ public class MemberManagement {
 			System.out.println("로그인 성공!");
 		} else {
 			System.out.println("아이디 또는 비밀번호가 일치하지 않습니다.");
+=======
+		if(!memberIdCheck(mId)
+				&&!mPw.equals(mrePw)) {System.out.println("이미사용중이거나 "))
+			
+>>>>>>> bc0d025 (Your commit message)
 		}
 	}
 
