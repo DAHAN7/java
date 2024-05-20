@@ -40,6 +40,7 @@ public class AndroidSmartPhone extends DMBPhone {
 	// @Override
 	// 재정의된 method는 상위클래스의 접근 제한자보다 
 <<<<<<< HEAD
+<<<<<<< HEAD
  	// 좁은 범위의 접근제한자를 가질수 없음.
 	// private void bell() {
 	public void bell() {
@@ -47,6 +48,10 @@ public class AndroidSmartPhone extends DMBPhone {
 	// 좁은 범위의 접근제한자를 가질수 없음.
 	private void bell() {
 >>>>>>> cfbc841 (first commit)
+=======
+	// 좁은 범위의 접근제한자를 가질수 없음.
+	private void bell() {
+>>>>>>> cfbc84102ee373e8fad74fd99327aed22cb79e61
 		System.out.println("디지털 벨소리가 울립니다.");
 	}
 
