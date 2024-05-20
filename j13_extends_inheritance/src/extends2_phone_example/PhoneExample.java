@@ -39,6 +39,11 @@ public class PhoneExample {
 		smartPhone.bell();
 		smartPhone.powerOff();
 		
+<<<<<<< HEAD
+=======
+		
+		
+>>>>>>> cfbc841 (first commit)
 	}
 
 }
