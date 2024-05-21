@@ -1,5 +1,11 @@
 package extends1_base;
 
+/**
+ * extends keyword 가 없는 
+ * class는 Object를 상속
+ * Object는 모든 클래스의 부모 or 최상위 객체
+ * 모든 클래스는 Object를 상속받고 있음.
+ */
 class Car// extends Object
 {
 	
