@@ -86,19 +86,19 @@ public class MemberManagement{
 		String mPw = sc.next();
 		System.out.println("비밀번호를 한번 더 입력해주세요");
 		String rePw = sc.next();
-		if(!memberIdCheck(mId)||!mPw.equals(rePw)) {
-		System.out.println("이미 사용중이거나 비밀번호가 일치하지 않습니다.");
-		return;
+		if(!memberIdCheck(mId)&&!mPw.equals(rePw)) {
+			System.out.print("아이디와 비밀번호가 일치하지 않습니다.");			
+			return;
 		}
-	System.out.print("이름을 입력해주세요>");
-	String name =sc.next();
-	for(int i=0;i<members.length;i++) {
-	if(members[i]==null) {
-		members[i]=new Member(i+1,name,mId,mPw);
-		System.out.print("회원가입 완료");
-		return;
-	}
-	}
+		System.out.println("이름을 입력해주세요>");
+		String mName= sc.next();
+		for(int i=0;i<members.length;i++) {
+			if(members[i]==null) {
+				members[i]=new Member(i+1,mName,mId,mPw);
+				System.out.print("회원가입 완료");
+				return;
+			}
+		}
 	}
 
 	private void login() {
@@ -106,22 +106,31 @@ public class MemberManagement{
 		String mId = sc.next();
 		System.out.println("비밀번호를 입력해주세요 >");
 		String mPw = sc.next();
-		Member m = findMember(new Member(mId,mPw));
+		Member m= findMember(new Member(mId,mPw));
 		
 		if(m!=null) {
-			loginMember=m;
-			System.out.println("정상적으로 로그인되었습니다.");
+			loginMember = m;
+			System.out.println("정상적으로 로그인 되었습니다.");
 			System.out.println(m.toString());
 			if(m.getName().equals("master")) {
 				System.out.println("관리자 계정입니다.");
 			}
 			return;
 		}
+		System.out.println("일치하는 회원정보가 없습니다.");
 	}
 
 	private void select() {
+		if(loginMember!=null&& loginMember.equals(master)) {
+			for(Member m: members) {
+				if(m!=null) 
+					System.out.print(m);
+			}
+				}else {
+					System.out.println("관리자만 확인가능한 메뉴입니다.");
+				}
+			}
 		
-	}
 	
 
 	private void update() {
@@ -137,10 +146,58 @@ public class MemberManagement{
 			select();
 			System.out.println("수정할 회원 번호를 입력해 주세요.");
 			int mNum = sc.nextInt();
+		//관리자 로그인 회원정보 수정
+		for(int i=0;i<members.length;i++) {
+			if(members[i]!=null&&members[i].getNum()==mNum) {
+				System.out.println("수정할 회원의 이름을 입력해주세요> ");
+				String name = sc.next();
+				members[i].setName(name);
+				System.out.print("수정완료");
+				return;
+			}
+			}
+		}else {
+		// 내정보 수정
+		System.out.print("내정보 수정--------");
+		System.out.print("비밀번호를 한번 더 입력해주세요>");
+		String pw = sc.next();
+		if(loginMember.getPw().equals(pw)) {
+			System.out.print("수정할 이름을 입력해주세요");
+			String name =sc.next();
+			loginMember.setName(name);
+			System.out.print("수정완료");
+			System.out.print(loginMember);
+			
 		}
-	}
-
+		System.out.print("비밀번호가 일치하지 않습니다.");
+		}
+		}
+		
+	
 	private void delete() {
+		// 로그인된 사용자인지 확인
+		if(loginMember !=null) {
+		System.out.print("로그인후 사용가능한 기능입니다.");
+		return;
+		}
+		// 로그인된 사용자라면 관리자 계정인지 확인
+		if(loginMember.equals(master)) {
+			System.out.print("master 계정은 삭제할 수 없습니다.");
+			return;
+		}else{
+			System.out.print("정말로 탈퇴하시겠습니까?y/n");
+			String yn=sc.next();
+			if(yn.equals("Y") || yn.equals("y")||yn.equals( "ㅛ")) {
+				System.out.println("회원탈퇴 완료");
+				deleteMember();
+			}
+			
+		}
+		// 일반 사용자면 탈퇴 처리 진행
+		// 탈퇴 여부 확인
+		// deleteMember();
+		
+		// 관리자라면 관리자계정은 삭제할수 없음 안내 출력
 		
 	}
 	
