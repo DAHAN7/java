@@ -23,7 +23,9 @@ public class Car// extends Object
 			speed = 0;// 속도가 0 미만으로 내려가지 않도록 설정
 		}
 	}
-
+	//alt + s, v
+//	@Override	public String toString() {		return "Car [color=" + this.color  + ", speed=" + this.speed + ", gear=" + this.gear + "]";}
+	//alt +s,s,s
 	@Override
 	public String toString() {
 		return "Car [color=" + color + ", speed=" + speed + ", gear=" + gear + "]";
